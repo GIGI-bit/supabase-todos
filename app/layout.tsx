@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={geistSans.className} suppressHydrationWarning>
       <body className="bg-background text-foreground">
-        <ThemeProvider
+        {/* <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
@@ -70,7 +70,10 @@ export default function RootLayout({
               </footer>
             </div>
           </main>
-        </ThemeProvider>
+        </ThemeProvider> */}
+        <main className="min-h-screen flex flex-col items-center">
+          {children}
+        </main>
       </body>
     </html>
   );
