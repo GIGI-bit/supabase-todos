@@ -1,6 +1,7 @@
 "use client";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { ToastContainer, toast } from "react-toastify";
 import { SubmitButton } from "@/components/submit-button";
 
 export default function AddPage() {
@@ -18,6 +19,10 @@ export default function AddPage() {
         "Content-Type": "application/json",
       },
     });
+
+    res.ok
+      ? toast.success("Todo Added Successfully!!")
+      : toast.warn("Failed to add todo!!");
   };
 
   return (
@@ -44,6 +49,18 @@ export default function AddPage() {
           </SubmitButton>
         </div>
       </form>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 }
